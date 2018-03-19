@@ -1,9 +1,11 @@
-import datetime
+from datetime import date
+from collections import Counter
 
-# dt = '2001-10-18'
-# year, month, day = (int(x) for x in dt.split('-'))    
-# answer = datetime.date(year, month, day).weekday()
+counter = Counter()
 
-# print answer
+for year in xrange(1901, 2001):
+    for month in xrange(1, 13):
+        day = date(year, month, 1)
+        counter[day.weekday()] += 1
 
-print  datetime.datetime.strptime('Jan  1, 1900', '%B %d, %Y').strftime('%A')
+print counter[6]
