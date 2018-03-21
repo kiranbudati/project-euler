@@ -1,7 +1,8 @@
-combos = []
-for x in xrange(n):
-    for y in xrange(n):
-        for z in xrange(n):
-             combos.append([x,y,z])
+from itertools import permutations 
+n = 3
+my_list = []
 
-print combos
+for item in permutations(range(n), 5): 
+    my_list.append(item)
+
+print my_list
